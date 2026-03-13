@@ -1,0 +1,47 @@
+[app]
+name = "MyApp"
+version = "1.0.0"
+debug = false
+max_connections = 100
+timeout = 30.5
+
+[app.logging]
+level = "INFO"
+file = "/var/log/app.log"
+rotate = true
+
+[database]
+host = "localhost"
+port = 5432
+name = "mydb"
+pool_size = 10
+
+[database.credentials]
+username = "admin"
+password = "secret"
+
+[server]
+host = "0.0.0.0"
+port = 8080
+workers = 4
+allowed_origins = ["https://example.com", "https://api.example.com"]
+
+[feature_flags]
+enable_beta = false
+enable_analytics = true
+
+[PEPPOL]
+smp_url= "https://urlfoo.com"
+
+    [[PEPPOL.ENDPOINTS]]
+    doctype="one"
+    procid="sfja;ldfa;f"
+
+    [[PEPPOL.ENDPOINTS]]
+    doctype="two"
+    procid="woeioklwklsjdf"
+
+
+[MAPPINGS]    
+DE = {name="Deutschland", code="0088" }
+BE = {name="Belgium", code="3434" }
