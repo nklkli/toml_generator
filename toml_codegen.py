@@ -15,20 +15,14 @@ Usage:
     python toml_codegen.py config.toml -o out.py  # writes to file
 """
 
+from __future__ import annotations
 
 import argparse
 import sys
 from pathlib import Path
 from typing import Any
 
-try:
-    import tomllib
-except ModuleNotFoundError:
-    try:
-        import tomli as tomllib  # type: ignore[no-redef]
-    except ModuleNotFoundError:
-        sys.exit(
-            "ERROR: Python < 3.11 detected and 'tomli' is not installed.\nRun: pip install tomli")
+import tomllib
 
 
 # ---------------------------------------------------------------------------
@@ -167,10 +161,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-try:
-    import tomllib
-except ModuleNotFoundError:
-    import tomli as tomllib  # type: ignore[no-redef]  pip install tomli
+import tomllib
 
 '''
 
